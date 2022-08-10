@@ -1,0 +1,30 @@
+.arrow {
+  position: relative;
+  top: 0;
+  transition: top ease 0.5s;
+  transition: .5s ease;
+  /* backface-visibility: hidden; */
+}
+
+.arrow:hover {
+  top: -8px;
+  cursor: pointer;
+}
+
+.gridarrow {
+  position: relative;
+  transition: all 0.3s;
+  right: 0;
+
+}
+.gridarrow:hover 
+{
+  cursor: pointer;
+  background-color: #2F4553;
+
+}
+
+.gridarrow:hover .navigator {
+  transform: translate(5px);
+  transition: all 0.2s;
+}

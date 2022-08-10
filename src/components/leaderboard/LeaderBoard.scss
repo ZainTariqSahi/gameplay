@@ -1,0 +1,25 @@
+@import "~ag-grid-community/src/styles/ag-grid.scss";
+@import "~ag-grid-community/src/styles/ag-theme-alpine-dark/sass/ag-theme-alpine-dark-mixin.scss";
+
+.ag-theme-custom-react {
+  @include ag-theme-alpine-dark((row-background-color: #000000f2,
+      header-background-color: black,
+      ag-foreground-color: red,
+      row-border-color: transparent,
+      row-hover-color: null,
+      checkbox-checked-color: #2661ad,
+      range-selection-border-color: #ff00b1,
+      range-selection-background-color: #033056,
+      header-height: 80px));
+
+  .ag-root-wrapper {
+    border: solid 1px;
+    color: var(--ag-color, #033056 )!important;
+    border-color: var(--ag-border-color, #1A2C38) !important;
+  }
+
+  .ag-menu-option-active {
+    background-color: #da0d0d;
+    color: #ADB7CF;
+  }
+}
