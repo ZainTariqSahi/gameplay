@@ -40,19 +40,19 @@ const getActions = () => {
   return [
     function (api, columnApi) {
       columnApi.applyColumnState({
-        state: [{ colId: 'betamount', sort: 'asc' }],
+        state: [{ colId: 'Name', sort: 'asc' }],
         defaultState: { sort: null },
       });
     },
     function (api, columnApi) {
       columnApi.applyColumnState({
-        state: [{ colId: 'multiplier', sort: 'asc' }],
+        state: [{ colId: 'Win', sort: 'asc' }],
         defaultState: { sort: null },
       });
     },
     function (api, columnApi) {
       columnApi.applyColumnState({
-        state: [{ colId: 'payout', sort: 'asc' }],
+        state: [{ colId: 'Amount', sort: 'asc' }],
         defaultState: { sort: null },
       });
     },
@@ -61,110 +61,47 @@ const getActions = () => {
 
 const rowData = [
   {
-    game: 'Test Game 1',
-    user: 'Test User 1',
-    time: '00:00',
-    betamount: '$1.00',
-    multiplier: '1.00x',
-    payout: '$1.00',
+    Rank: '1',
+    Name: 'Zain Wick',
+    Amount: '$2000',
+    Win: '64'
   },
   {
-    game: 'Test Game 2',
-    user: 'Test User 2',
-    time: '00:01',
-    betamount: '$2.00',
-    multiplier: '2.00x',
-    payout: '$2.00',
+    Rank: '2',
+    Name: 'Suffyan Malik',
+    Amount: '$1000',
+    Win: '56'
   },
   {
-    game: 'Test Game 3',
-    user: 'Test User 3',
-    time: '00:02',
-    betamount: '$3.00',
-    multiplier: '3.00x',
-    payout: '$3.00',
+    Rank: '3',
+    Name: 'Mathira Zohaib',
+    Amount: '$4000',
+    Win: '30'
   },
   {
-    game: 'Test Game 4',
-    user: 'Test User 4',
-    time: '00:03',
-    betamount: '$4.00',
-    multiplier: '3.00x',
-    payout: '$4.00',
+    Rank: '4',
+    Name: 'Bushra BB',
+    Amount: '$200',
+    Win: '20'
   },
   {
-    game: 'Test Game 5',
-    user: 'Test User 5',
-    time: '00:04',
-    betamount: '$5.00',
-    multiplier: '5.00x',
-    payout: '$5.00',
+    Rank: '5',
+    Name: 'Mister X',
+    Amount: '$10000',
+    Win: '10'
   },
   {
-    game: 'Test Game 6',
-    user: 'Test User 6',
-    time: '00:05',
-    betamount: '$4.00',
-    multiplier: '5.00x',
-    payout: '$6.00',
+    Rank: '6',
+    Name: 'Mister Y',
+    Amount: '$5000',
+    Win: '45'
   },
   {
-    game: 'Test Game 7',
-    user: 'Test User 7',
-    time: '00:05',
-    betamount: '$6.00',
-    multiplier: '4.00x',
-    payout: '$7.00',
+    Rank: '7',
+    Name: 'Neutrals',
+    Amount: '$7000',
+    Win: '40'
   },
-  {
-    game: 'Test Game 8',
-    user: 'Test User 8',
-    time: '00:05',
-    betamount: '$6.00',
-    multiplier: '5.00x',
-    payout: '$8.00',
-  },
-  {
-    game: 'Test Game 9',
-    user: 'Test User 9',
-    time: '00:05',
-    betamount: '$6.00',
-    multiplier: '4.00x',
-    payout: '$9.00',
-  },
-  {
-    game: 'Test Game 10',
-    user: 'Test User 10',
-    time: '00:05',
-    betamount: '$6.00',
-    multiplier: '6.00x',
-    payout: '$9.00',
-  },
-  {
-    game: 'Test Game 11',
-    user: 'Test User 11',
-    time: '00:05',
-    betamount: '$6.00',
-    multiplier: '6.00x',
-    payout: '$10.00',
-  },
-  {
-    game: 'Test Game 12',
-    user: 'Test User 12',
-    time: '00:05',
-    betamount: '$6.00',
-    multiplier: '6.00x',
-    payout: '$9.00',
-  },
-  {
-    game: 'Test Game 13',
-    user: 'Test User 13',
-    time: '00:05',
-    betamount: '$6.00',
-    multiplier: '6.00x',
-    payout: '$9.00',
-  },
-
 ];
 
 const AnimateTable = params => {
@@ -176,7 +113,7 @@ const AnimateTable = params => {
   const defaultColDef = useMemo(() => {
     return {
       flex: 1,
-      minWidth: 150,
+      minWidth: 100,
       sortable: true,
       filter: true,
     };
@@ -198,11 +135,11 @@ const AnimateTable = params => {
     StartInterval(params.api, params.columnApi);
   };
   const rowStyle = {
-    background: '#071836',
+    background: '#02183E',
   };
   const getRowStyle = params => {
     if (params.node.rowIndex % 2 === 0) {
-      return { background: '##071836' };
+      return { background: '#071836' };
     }
   };
 
@@ -224,6 +161,7 @@ const AnimateTable = params => {
           <div style={gridStyle} className="ag-theme-custom-react">
             <AgGridReact
               rowData={rowData}
+              headerHeight={0}
               defaultColDef={defaultColDef}
               enableRangeSelection={true}
               animateRows={true}
