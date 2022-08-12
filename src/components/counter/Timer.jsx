@@ -20,6 +20,7 @@ const ShowCounter = ({ days, hours, minutes, seconds }) => {
         direction={{ base: 'column', md: 'row' }}
         spacing="8"
         className="countdown-link"
+        
       >
         <DateTimeDisplay
           color={'#FFE9B7'}
@@ -27,6 +28,7 @@ const ShowCounter = ({ days, hours, minutes, seconds }) => {
           value={days}
           type={'Days'}
           isDanger={days <= 1}
+          className='danger'
         />
         <DateTimeDisplay
           color={'#44FD70'}

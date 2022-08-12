@@ -11,7 +11,7 @@ import './App.css'
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Stack minH={'100vh'} bgColor={'#1D1D30'}> {/*Home Page Container */}
+      <Stack minH={'100vh'}  bgColor={'#1D1D30'}> {/*Home Page Container */}
         {/* <Header /> */}
         <CountdownTimer />
         <GamePage />

@@ -10,6 +10,8 @@
     font-weight: bold;
     color: red;
   }
+
+  
   
   .expired-notice > p {
     font-size: 1.5rem;
@@ -23,7 +25,7 @@
     justify-content: center;
     align-items: center;
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1rem;
     line-height: 1.75rem;
     padding: 0.5rem;
     border-radius: 0.25rem;

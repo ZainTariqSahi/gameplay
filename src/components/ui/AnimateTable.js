@@ -105,9 +105,9 @@ const rowData = [
 ];
 
 const AnimateTable = params => {
-  const containerStyle = useMemo(() => ({ width: '100%', height: '40vh' }), []);
+  const containerStyle = useMemo(() => ({ width: '100%', height: '20vh' }), []);
   const gridStyle = useMemo(
-    () => ({ height: '40vh', width: '100%', color: 'white' }),
+    () => ({ height: '20vh', width: '100%', color: 'white' }),
     []
   );
   const defaultColDef = useMemo(() => {
@@ -170,6 +170,7 @@ const AnimateTable = params => {
               suppressAggFuncInHeader={true}
               autoGroupColumnDef={autoGroupColumnDef}
               onGridReady={onGridReady}
+              detailRowHeight={100}
             ></AgGridReact>
           </div>
         </div>

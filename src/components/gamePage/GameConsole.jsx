@@ -16,6 +16,7 @@ import classes from './Odometer.module.css';
 import AnimatedNumber from 'react-animated-number';
 import AnimatedNumbers from 'react-animated-numbers';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
+import '../../App.css';
 
 const GameConsole = () => {
   const [counter, setCounter] = useState(100);
@@ -28,10 +29,19 @@ const GameConsole = () => {
   const renderTime = ({ remainingTime }) => {
     return (
       <div>
-        <div style={{ fontSize: '20px', color: 'red' }}>
+        <Stack
+          backgroundClip={'text'}
+          // style={{ WebkitTextStroke: '1px #20fc9d',color:'#A31EC7'}}
+          style={{ WebkitTextStroke: '1px' }}
+          fontSize={'130px'}
+          direction={'column'}
+          alignItems={'center'}
+          fontWeight={'1000'}
+          color={'#A81DC6'}
+        >
           {' '}
           <AnimatedNumbers animateToNumber={number}></AnimatedNumbers>
-        </div>
+        </Stack>
       </div>
     );
   };
@@ -92,7 +102,7 @@ const GameConsole = () => {
         py={'6'}
         spacing={'6'}
       >
-        <CircularProgress
+        {/* <CircularProgress
           trackColor="inherit"
           capIsRound
           thickness={'6px'}
@@ -147,9 +157,9 @@ const GameConsole = () => {
                     backgroundClip={'text'}
                     style={{ WebkitTextStroke: '1px #20fc9d' }}
                     fontWeight="700"
-                  >
-                    {/* {number} */}
-                    {/* <AnimatedNumber
+                  > */}
+        {/* {number} */}
+        {/* <AnimatedNumber
           value={number}
           style={{
             fontSize: 100
@@ -160,7 +170,7 @@ const GameConsole = () => {
             percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}
           }
         /> */}
-                    <AnimatedNumbers animateToNumber={number}></AnimatedNumbers>
+        {/* <AnimatedNumbers animateToNumber={number}></AnimatedNumbers>
                   </Heading>
                   <Text
                     justifyItems={'end'}
@@ -175,7 +185,30 @@ const GameConsole = () => {
               </Stack>
             </Stack>
           </CircularProgressLabel>
-        </CircularProgress>
+        </CircularProgress> */}
+
+        <Stack alignSelf={'center'} className={'test'}>
+          <CountdownCircleTimer
+            isPlaying
+            duration={10}
+            colors={['#20fc94', '#20fc94', '#20fc94', '#20fc94']}
+            colorsTime={[10, 6, 3, 0]}
+            onComplete={() => ({ shouldRepeat: true, delay: 2 })}
+            size={350}
+            strokeWidth={30}
+          >
+            <Stack
+              border={'5px solid #20FC9D'}
+              borderRadius={'full'}
+              h={{ base: '14rem', sm: '15.5rem' }}
+              w={{ base: '14rem', sm: '15.5rem' }}
+              align={'center'}
+              justify={'center'}
+            >
+              {renderTime}
+            </Stack>
+          </CountdownCircleTimer>
+        </Stack>
         <Stack direction={'row'} justify={'space-between'}>
           <Stack align={'center'}>
             <IconButton
@@ -187,7 +220,7 @@ const GameConsole = () => {
                     width: '100%',
                     filter: 'drop-shadow( 0px -6px 5px #5affee)',
                   }}
-                  size={'2.5em'}
+                  size={'1.5em'}
                 />
               }
               w={'fit-content'}
@@ -201,11 +234,12 @@ const GameConsole = () => {
               color={'white'}
               textShadow={'#5AFFEE 1px 1px 8px'}
               style={{ WebkitTextStroke: '1px #5AFFEE' }}
+              size={'xs'}
             >
               HIGH
             </Heading>
           </Stack>
-          <Text color={'#B6B7C3'}>
+          <Text color={'#B6B7C3'} fontSize={'sm'}>
             Number range from{' '}
             <chakra.span fontWeight={'bold'} color={'white'}>
               1 to 21
@@ -222,7 +256,7 @@ const GameConsole = () => {
                     filter: 'drop-shadow( 0px -6px 5px #FF0066)',
                     transform: 'rotate(180deg)',
                   }}
-                  size={'2.5em'}
+                  size={'1.5em'}
                 />
               }
               w={'fit-content'}
@@ -237,6 +271,7 @@ const GameConsole = () => {
               color={'white'}
               textShadow={'#FF0066 1px 1px 8px'}
               style={{ WebkitTextStroke: '1px #FF0066' }}
+              size={'xs'}
             >
               LOW
             </Heading>
@@ -248,9 +283,9 @@ const GameConsole = () => {
           align={'center'}
           spacing={{ base: '6', sm: 'inherit' }}
         >
-          <Text color={'white'} align={'center'}>
+          <Text color={'white'} align={'center'} fontSize={'md'}>
             <chakra.span
-              fontSize={'xl'}
+              fontSize={'md'}
               color={'white'}
               textShadow={'#FFB300 1px 1px 8px'}
               style={{ WebkitTextStroke: '0.5px #FFB300' }}
@@ -266,24 +301,13 @@ const GameConsole = () => {
             boxShadow="#13cee6 0px 0px 4px 0px, #13cee6 0px 0px 16px 0px"
             variant={'outline'}
             color="white"
-            size={'lg'}
+            size={'md'}
             borderRadius={'lg'}
             leftIcon={<GiShoppingCart color="#13cee6" />}
           >
             <Text fontSize={'sm'}>Buy more</Text>
           </Button>
         </Stack>
-
-        <CountdownCircleTimer
-          isPlaying
-          duration={10}
-          colors={['#004777', '#F7B801', '#A30000', '#A30000']}
-          colorsTime={[10, 6, 3, 0]}
-          onComplete={() => ({ shouldRepeat: true, delay: 2 })}
-        >
-          {/* <AnimatedNumbers  animateToNumber={number}></AnimatedNumbers> */}
-          {renderTime}
-        </CountdownCircleTimer>
       </Stack>
     </>
   );

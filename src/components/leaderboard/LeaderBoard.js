@@ -90,7 +90,7 @@ const LeaderBoard = () => {
           </Table>
         </TableContainer> */}
         <AnimateTable/>
-        <Stack w={'100%'} mt={'0 !important'}>
+        <Stack w={'100%'} mt={'0 !important'} >
           <LiveChat />
         </Stack>
       </Stack>

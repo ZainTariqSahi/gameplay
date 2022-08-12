@@ -4,6 +4,7 @@ import {
 } from '@chakra-ui/react';
 import LeaderBoard from '../leaderboard/LeaderBoard';
 import GameConsole from './GameConsole';
+import '../../App.css'
 
 const GamePage = () => {
 
@@ -21,7 +22,7 @@ const GamePage = () => {
       justifyContent={'space-between'}
       px={{ base: '4', md: '8', lg: '16' }}
     >
-      <Stack w={{ base: '100%', md: '55%' }} >
+      <Stack w={{ base: '100%', md: '55%' }}  >
         <GameConsole />
       </Stack>
       <Stack w={'40%'} display={{ base: 'none', sm: 'inherit' }}>
